@@ -2,6 +2,8 @@ import Home from "./pages/Home";
 import Private from "./pages/Private";
 import { Route, Routes, Link } from "react-router-dom";
 
+import { RequireAuth } from "./contexts/Auth/RequireAuth";
+
 import * as C from "./styles";
 
 function App() {
@@ -17,7 +19,14 @@ function App() {
       <hr />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/private" element={<Private />} />
+        <Route
+          path="/private"
+          element={
+            <RequireAuth>
+              <Private />
+            </RequireAuth>
+          }
+        />
       </Routes>
     </C.Container>
   );
