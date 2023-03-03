@@ -5,8 +5,12 @@ import { Route, Routes, Link } from "react-router-dom";
 import { RequireAuth } from "./contexts/Auth/RequireAuth";
 
 import * as C from "./styles";
+import { useContext } from "react";
+import { AuthContext } from "./contexts/Auth/AuthContext";
 
 function App() {
+  const auth = useContext(AuthContext);
+
   return (
     <C.Container>
       <C.header>
@@ -14,6 +18,7 @@ function App() {
         <nav>
           <Link to="/">Home</Link>
           <Link to="/private">Página Privada</Link>
+          {auth.user && <a href="java:;">Sair</a>}
         </nav>
       </C.header>
       <hr />
