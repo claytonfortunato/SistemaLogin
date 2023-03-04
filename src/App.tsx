@@ -1,16 +1,16 @@
+import { Route, Routes, Link } from "react-router-dom";
+
 import Home from "./pages/Home";
 import Private from "./pages/Private";
-import { Route, Routes, Link, useNavigate } from "react-router-dom";
 
 import { RequireAuth } from "./contexts/Auth/RequireAuth";
-
-import * as C from "./styles";
 import { useContext } from "react";
 import { AuthContext } from "./contexts/Auth/AuthContext";
 
+import * as C from "./styles";
+
 function App() {
   const auth = useContext(AuthContext);
-  const navigate = useNavigate();
 
   const handleLogout = async () => {
     await auth.signout();

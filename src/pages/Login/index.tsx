@@ -16,7 +16,7 @@ const Login = () => {
   };
 
   const handlePasswordInput = (event: ChangeEvent<HTMLInputElement>) => {
-    setPassword(event?.target.value);
+    setPassword(event.target.value);
   };
 
   const handleClick = async () => {
