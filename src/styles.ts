@@ -25,4 +25,12 @@ export const header = styled.div`
     background-color: #333;
     color: #fff;
   }
+
+  button {
+    cursor: pointer;
+    border: none;
+    color: #fff;
+    background-color: #333;
+    padding: 2px;
+  }
 `;
